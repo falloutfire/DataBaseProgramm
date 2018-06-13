@@ -14,58 +14,28 @@ import java.util.ArrayList;
 
 public class CarbidDAO {
 
-    public static ObservableList<Carbide> searchMaterialBaseLike(String materialName) throws SQLException, ClassNotFoundException {
-        //Declare a SELECT statement
-        String selectStmtName = "Select Material_ID from material where Material_name LIKE '%" + materialName + "%'";
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<Integer> id = new ArrayList<>();
-        ObservableList<Carbide> materialBases = FXCollections.observableArrayList();
-        try {
-            ResultSet rsMatName = DBUtil.dbExecuteQuery(selectStmtName);
-            while (rsMatName.next()) {
-                id.add(rsMatName.getInt(1));
-                names.add(rsMatName.getString(2));
-            }
-            for (int i = 0; i < id.size(); i++) {
-                String selectStmtValue = "Select Parameter_value from parameter_value WHERE Material_id = " + id.get(i);
-                ResultSet rsMatValue = DBUtil.dbExecuteQuery(selectStmtValue);
-                materialBases.add(getMaterialBaseFromResultSet(rsMatValue, id.get(i), names.get(i)));
-            }
-            return materialBases;
-        } catch (SQLException e) {
-            System.out.println("While searching an material with " + materialName + " id, an error occurred: " + e);
-            throw e;
-        }
-    }
-
-    private static Carbide getMaterialBaseFromResultSet(ResultSet rsMat, int materialId, String materialName) throws SQLException {
-        Carbide carbide = new Carbide();
-        ArrayList<Double> values = new ArrayList<>();
-        while (rsMat.next()) {
-            values.add(rsMat.getDouble(1));
-        }
-
-        return carbide;
-    }
-
     //метод который собирает фильтры
-    public static StringBuffer setStmtQuery(ArrayList<String> queries) {
-        StringBuffer stmtQuery = new StringBuffer();
-        stmtQuery.append("Select Material_ID from material where ");
-        for (String query : queries) {
-            stmtQuery.append(query);
-        }
+    private static String setStmtQuery(ArrayList<String> queries) {
+        String stmtQuery;
+        stmtQuery = "Select ID_material from material where ";
+        for(int i = 0; i < queries.size(); i++)
+            if(i != 0){
+                stmtQuery = stmtQuery + " and " + queries.get(i);
+            } else {
+                stmtQuery = stmtQuery + queries.get(i);
+            }
+        System.out.println(stmtQuery);
         return stmtQuery;
     }
 
     public static Carbide searchMaterialBase(String materialId) throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
-        int idMark;
         String selectStmtName = "Select * from material where ID_Material = " + materialId;
 
         Carbide carbide = new Carbide();
         try {
             ResultSet rsMatName = DBUtil.dbExecuteQuery(selectStmtName);
+            int idMark;
             while (rsMatName.next()) {
                 carbide.setId(rsMatName.getInt("ID_material"));
                 idMark = rsMatName.getInt("ID_mark");
@@ -130,11 +100,31 @@ public class CarbidDAO {
             while (resultSet.next()) {
                 String materialId = String.valueOf(resultSet.getInt("ID_Material"));
                 carbides.add(searchMaterialBase(materialId));
+
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
+        return carbides;
+    }
+
+    public static ObservableList<Carbide> searchAllCarbides(ArrayList<String> queries) {
+
+        ObservableList<Carbide> carbides = FXCollections.observableArrayList();
+        String stringBuffer = setStmtQuery(queries);
+        System.out.println(stringBuffer);
+        try {
+            ResultSet resultSet = DBUtil.dbExecuteQuery(stringBuffer);
+            while (resultSet.next()) {
+                String materialId = String.valueOf(resultSet.getInt(1));
+                carbides.add(searchMaterialBase(materialId));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(carbides.size());
         return carbides;
     }
 

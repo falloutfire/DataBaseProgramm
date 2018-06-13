@@ -9,14 +9,14 @@
 <AnchorPane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baseProject.FXMLControllers.FilterLayoutController">
    <children>
       <ComboBox fx:id="marksComboBox" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
-      <Label layoutX="177.0" layoutY="18.0" text="Mark" />
+      <Label layoutX="177.0" layoutY="18.0" text="Марка" />
       <ComboBox fx:id="destroyComboBox" layoutX="14.0" layoutY="60.0" prefWidth="150.0" />
       <ComboBox fx:id="cutComboBox" layoutX="14.0" layoutY="111.0" prefWidth="150.0" />
-      <Label layoutX="177.0" layoutY="64.0" text="Class destroy" />
-      <Label layoutX="177.0" layoutY="115.0" text="Class cut" />
+      <Label layoutX="177.0" layoutY="64.0" text="Класс разрушения" />
+      <Label layoutX="177.0" layoutY="115.0" text="Класс резки" />
       <ComboBox fx:id="manufacturerComboBox" layoutX="14.0" layoutY="163.0" prefWidth="150.0" />
-      <Label layoutX="177.0" layoutY="167.0" text="Manufacturer" />
-      <Button layoutX="227.0" layoutY="311.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Поиск" />
+      <Label layoutX="177.0" layoutY="167.0" text="Производитель" />
+      <Button layoutX="227.0" layoutY="311.0" mnemonicParsing="false" onAction="#onClickSearch" prefHeight="25.0" prefWidth="58.0" text="Поиск" />
       <Button layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#onClickCancel" text="Отмена" />
    </children>
 </AnchorPane>

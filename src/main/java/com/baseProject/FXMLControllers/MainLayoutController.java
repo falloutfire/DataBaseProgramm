@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class MainLayoutController {
@@ -44,6 +45,8 @@ public class MainLayoutController {
     @FXML
     private TableColumn<Carbide,Float> valueDestroyColumn;
     private Main main;
+    ObservableList<Carbide> carbides;
+    ArrayList<String> test;
 
     public MainLayoutController() {
     }
@@ -64,7 +67,6 @@ public class MainLayoutController {
         manufacturerColumn.setCellValueFactory(cellData -> cellData.getValue().manufacturerProperty());
         ObservableList<Carbide> carbides = CarbidDAO.searchAllCarbides();
         carbidesView.setItems(carbides);
-        //carbidesView.setItems(carbides);
     }
 
     public void onClickAdd(ActionEvent actionEvent) {
@@ -94,7 +96,7 @@ public class MainLayoutController {
             //carbidesView.setItems(materialBases);
             //addItemsCombo();
         }
-        updateTable();
+        //updateTable();
     }
 
     @FXML
@@ -105,8 +107,9 @@ public class MainLayoutController {
                 //ObservableList<Carbide> materialBases = CarbidDAO.searchAllCarbides();
                 //carbidesView.setItems(materialBases);
                 //addItemsCombo();
+                updateTable();
             }
-            updateTable();
+
         }
     }
 
@@ -115,7 +118,13 @@ public class MainLayoutController {
     }
 
     public void updateTable(){
-        ObservableList<Carbide> carbides = CarbidDAO.searchAllCarbides();
+        carbides = CarbidDAO.searchAllCarbides();
+        carbidesView.setItems(carbides);
+    }
+
+    public void setCarbides(ObservableList<Carbide> carbides) {
+        this.carbides = carbides;
+        carbidesView.getItems().clear();
         carbidesView.setItems(carbides);
     }
 }

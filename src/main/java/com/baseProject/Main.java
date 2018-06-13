@@ -101,6 +101,7 @@ public class Main extends Application {
 
             FilterLayoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
+            controller.setMain(this);
 
             dialogStage.showAndWait();
             return controller.isOkClicked();
@@ -156,5 +157,9 @@ public class Main extends Application {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public MainLayoutController getMainLayoutController() {
+        return mainLayoutController;
     }
 }

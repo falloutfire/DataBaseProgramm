@@ -7,6 +7,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 public class DetailsLayoutController {
 
@@ -55,6 +57,24 @@ public class DetailsLayoutController {
     }
 
     public void initialize() {
+        Pattern p = Pattern.compile("(\\d+\\.?\\d*)?");
+        percentSiCField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) percentSiCField.setText(oldValue);
+        });
+        percentCField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) percentCField.setText(oldValue);
+        });
+        percentFeField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) percentFeField.setText(oldValue);
+        });
+        valueCutField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) valueCutField.setText(oldValue);
+        });
+        valueDestroyField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!p.matcher(newValue).matches()) valueDestroyField.setText(oldValue);
+        });
+
+
         manufacturerComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
@@ -149,6 +169,9 @@ public class DetailsLayoutController {
             CarbidDAO.setComboParameters(carbide, "fractions", "F_number", String.valueOf(carbide.getFractionNumber()));
             CarbidDAO.setComboParameters(carbide, "manufacturer", "Name", carbide.getManufacturer());
             CarbidDAO.setComboParameters(carbide, "mark", "Mark", String.valueOf(carbide.getMark()));
+            if(file != null){
+                CarbidDAO.setImage(carbide, file);
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -214,11 +237,10 @@ public class DetailsLayoutController {
         if (file != null) {
             if (!file.getPath().endsWith(".jpg")) {
                 file = new File(file.getPath() + ".jpg");
+                Image img = new Image("file:"+file.getAbsolutePath(), 255, 212, true, true);
+                imageMaterialView.setImage(img);
             }
         }
-
-        Image img = new Image("file:"+file.getAbsolutePath(), 255, 212, true, true);
-        imageMaterialView.setImage(img);
     }
 
     public void onClickAdd(ActionEvent actionEvent) {
@@ -238,11 +260,21 @@ public class DetailsLayoutController {
                 carbide.setValueDestroy(Float.parseFloat(valueDestroyField.getText()));
 
                 CarbidDAO.addMaterialInBase(carbide, file);
+                dialogStage.close();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Ошибка");
+                alert.setHeaderText("Не выбрано изображение материала");
+                alert.setContentText("Выберете изображение материала!");
+                alert.showAndWait();
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Ошибка");
+            alert.setHeaderText("Присутствует ошибка в одном из полей");
+            alert.setContentText("Проверьте все поля на наличие ошибок!");
+            alert.showAndWait();
         }
-
-
     }
 }
