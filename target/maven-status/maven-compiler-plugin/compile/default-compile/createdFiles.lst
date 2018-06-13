@@ -1,0 +1,16 @@
+com\baseProject\FXMLControllers\LoginPassLayoutController.class
+com\baseProject\FXMLControllers\FilterLayoutController.class
+com\baseProject\DAO\CarbidDAO.class
+com\baseProject\FXMLControllers\DetailsLayoutController$3.class
+com\baseProject\FXMLControllers\DetailsLayoutController.class
+com\baseProject\FXMLControllers\MainLayoutController.class
+com\baseProject\FXMLControllers\RootLayoutController.class
+com\baseProject\FXMLControllers\DetailsLayoutController$2.class
+com\baseProject\FXMLControllers\DetailsLayoutController$6.class
+com\baseProject\FXMLControllers\DetailsLayoutController$7.class
+com\baseProject\Util\DBUtil.class
+com\baseProject\FXMLControllers\DetailsLayoutController$1.class
+com\baseProject\FXMLControllers\DetailsLayoutController$5.class
+com\baseProject\Entities\Carbide.class
+com\baseProject\Main.class
+com\baseProject\FXMLControllers\DetailsLayoutController$4.class

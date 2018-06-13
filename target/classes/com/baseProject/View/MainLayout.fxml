@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baseProject.FXMLControllers.MainLayoutController">
+   <children>
+      <TableView fx:id="carbidesView" layoutX="22.0" layoutY="88.0" onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="88.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID" />
+            <TableColumn fx:id="markColumn" prefWidth="69.0" text="Марка" />
+            <TableColumn fx:id="manufacturerColumn" prefWidth="120.0" text="Производитель" />
+            <TableColumn fx:id="colorColumn" prefWidth="100.0" text="Цвет" />
+            <TableColumn fx:id="fractionColumn" prefWidth="64.0" text="Фракция" />
+            <TableColumn fx:id="percentSicColumn" prefWidth="89.0" text="Процент SiC" />
+            <TableColumn fx:id="percentFeColumn" prefWidth="73.0" text="Процент Fe" />
+            <TableColumn fx:id="percentcColumn" prefWidth="76.0" text="Процент C" />
+            <TableColumn fx:id="typeOfUSeColumn" prefWidth="153.0" text="Тип использования" />
+            <TableColumn fx:id="classCutColumn" prefWidth="96.0" text="Класс резки" />
+            <TableColumn fx:id="valueCutColumn" prefWidth="106.0" text="Занчение резки" />
+            <TableColumn fx:id="classDestroyColumn" prefWidth="124.0" text="Класс разрушения" />
+            <TableColumn fx:id="valueDestroyColumn" prefWidth="140.0" text="Значение разрушения" />
+         </columns></TableView>
+      <Button layoutX="22.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickAdd" text="Добавить" />
+      <Button layoutX="100.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickDelete" text="Удалить выбранный" />
+      <Button layoutX="238.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickShowAll" text="Показать все" />
+      <Button layoutX="336.0" layoutY="53.0" mnemonicParsing="false" onAction="#onClickFilter" text="Фильтры" />
+   </children>
+</AnchorPane>
