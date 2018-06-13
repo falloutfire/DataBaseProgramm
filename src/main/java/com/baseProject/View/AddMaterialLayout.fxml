@@ -37,5 +37,9 @@
       <!--<Label fx:id="isUpdate" layoutX="89.0" layoutY="365.0" />-->
       <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0" />
       <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0" />
+      <Separator layoutX="325.0" layoutY="233.0" prefHeight="5.0" prefWidth="255.0" />
+      <Separator layoutX="325.0" layoutY="18.0" prefHeight="5.0" prefWidth="255.0" />
+      <Separator layoutX="322.0" layoutY="18.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
+      <Separator layoutX="577.0" layoutY="18.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
    </children>
 </AnchorPane>

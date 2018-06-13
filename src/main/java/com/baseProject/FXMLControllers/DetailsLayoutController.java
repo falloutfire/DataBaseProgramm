@@ -186,10 +186,10 @@ public class DetailsLayoutController {
         valueDestroyField.setText(String.valueOf(carbide.getValueDestroy()));
         try {
             image = CarbidDAO.getImageMaterial(String.valueOf(carbide.getId()));
+            imageMaterialView.setImage(image);
         } catch (SQLException | ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
-        imageMaterialView.setImage(image);
     }
 
     public void setDialogStage(Stage dialogStage) {
@@ -214,9 +214,11 @@ public class DetailsLayoutController {
         if (file != null) {
             if (!file.getPath().endsWith(".jpg")) {
                 file = new File(file.getPath() + ".jpg");
-                System.out.println(file);
             }
         }
+
+        Image img = new Image("file:"+file.getAbsolutePath(), 255, 212, true, true);
+        imageMaterialView.setImage(img);
     }
 
     public void onClickAdd(ActionEvent actionEvent) {

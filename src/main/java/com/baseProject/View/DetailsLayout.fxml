@@ -33,12 +33,16 @@
       <TextField fx:id="percentFeField" layoutX="135.0" layoutY="235.0" prefHeight="25.0" prefWidth="150.0" text="8" />
       <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0" text="13" />
       <TextField fx:id="valueCutField" layoutX="426.0" layoutY="267.0" prefHeight="17.0" prefWidth="149.0" text="12" />
-      <ImageView fx:id="imageMaterialView" fitHeight="212.0" fitWidth="255.0" layoutX="325.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageMaterialView" fitHeight="212.0" fitWidth="255.0" layoutX="325.0" layoutY="20.0" onMouseClicked="#onClickChooseImage" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickClose" text="Закрыть" />
       <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickUpdate" text="Изменить" />
       <Button layoutX="450.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickDelete" text="Удалить" />
       <Label fx:id="isUpdate" layoutX="89.0" layoutY="365.0" />
       <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0" />
       <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0" />
+      <Separator layoutX="577.0" layoutY="14.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
+      <Separator layoutX="322.0" layoutY="14.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
+      <Separator layoutX="325.0" layoutY="14.0" prefHeight="5.0" prefWidth="255.0" />
+      <Separator layoutX="325.0" layoutY="229.0" prefHeight="5.0" prefWidth="255.0" />
    </children>
 </AnchorPane>
