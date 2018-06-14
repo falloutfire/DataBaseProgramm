@@ -1,7 +1,6 @@
 package com.baseProject.FXMLControllers;
 
 import com.baseProject.DAO.CarbidDAO;
-import com.baseProject.Entities.Carbide;
 import com.baseProject.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,6 +18,7 @@ public class FilterLayoutController {
     public ComboBox destroyComboBox;
     public ComboBox cutComboBox;
     public ComboBox manufacturerComboBox;
+    public ComboBox fractionsComboBox;
     private Stage dialogStage;
     private boolean okClicked = false;
     private ArrayList<String> queries = new ArrayList<>();
@@ -26,7 +26,8 @@ public class FilterLayoutController {
     private String destroy;
     private String cut;
     private String manufacturer;
-    private ObservableList<String> marks, cuts, destroys, manufacturers;
+    private String fraction;
+    private ObservableList<String> marks, cuts, destroys, manufacturers, fractions;
     private Main main;
 
     public FilterLayoutController() {
@@ -57,17 +58,24 @@ public class FilterLayoutController {
                 mark = String.valueOf(newValue);
             }
         });
+        fractionsComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+                fraction = String.valueOf(newValue);
+            }
+        });
 
         try {
             marks = CarbidDAO.getMarkCarbide();
             cuts = CarbidDAO.getClassCut();
             destroys = CarbidDAO.getClassDestroy();
             manufacturers = CarbidDAO.getManufacturer();
+            fractions = CarbidDAO.getFractionNumber();
             marksComboBox.setItems(marks);
             cutComboBox.setItems(cuts);
             destroyComboBox.setItems(destroys);
             manufacturerComboBox.setItems(manufacturers);
-
+            fractionsComboBox.setItems(fractions);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -102,6 +110,10 @@ public class FilterLayoutController {
         if(destroy != null){
             destroy = CarbidDAO.getComboParameters("class_destroy", "Name_Class", destroy);
             queries.add("ID_Class_destroy = " + destroy);
+        }
+        if (fraction != null) {
+            fraction = CarbidDAO.getComboParameters("fractions", "F_number", fraction);
+            queries.add("ID_fraction = " + fraction);
         }
 
         main.getMainLayoutController().setCarbides(CarbidDAO.searchAllCarbides(queries));

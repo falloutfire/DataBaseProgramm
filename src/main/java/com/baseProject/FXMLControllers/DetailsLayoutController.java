@@ -2,7 +2,6 @@ package com.baseProject.FXMLControllers;
 
 import com.baseProject.DAO.CarbidDAO;
 import com.baseProject.Entities.Carbide;
-import com.baseProject.Util.DBUtil;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -237,9 +236,9 @@ public class DetailsLayoutController {
         if (file != null) {
             if (!file.getPath().endsWith(".jpg")) {
                 file = new File(file.getPath() + ".jpg");
-                Image img = new Image("file:"+file.getAbsolutePath(), 255, 212, true, true);
-                imageMaterialView.setImage(img);
             }
+            Image img = new Image("file:" + file.getAbsolutePath(), 255, 212, true, true);
+            imageMaterialView.setImage(img);
         }
     }
 
