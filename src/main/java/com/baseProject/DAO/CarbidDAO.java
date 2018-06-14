@@ -1,9 +1,11 @@
 package com.baseProject.DAO;
 
 import com.baseProject.Entities.Carbide;
+import com.baseProject.Entities.Manufacturer;
 import com.baseProject.Util.DBUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 import java.io.*;
@@ -28,7 +30,7 @@ public class CarbidDAO {
         return stmtQuery;
     }
 
-    public static Carbide searchMaterialBase(String materialId) throws SQLException, ClassNotFoundException {
+    private static Carbide searchMaterialBase(String materialId) throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
         String selectStmtName = "Select * from material where ID_Material = " + materialId;
 
@@ -311,6 +313,62 @@ public class CarbidDAO {
             DBUtil.dbExecuteImage(insertStmt, file);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static ObservableList<Manufacturer> searchAllManufacturers() {
+        ObservableList<Manufacturer> manufacturers = FXCollections.observableArrayList();
+        String selectStmt = "Select * from manufacturer";
+        try {
+            ResultSet resultSet = DBUtil.dbExecuteQuery(selectStmt);
+            while (resultSet.next()) {
+                Manufacturer m = new Manufacturer();
+                m.setId(resultSet.getInt(1));
+                m.setName(resultSet.getString(2));
+                m.setAddress(resultSet.getString(3));
+                m.setTelephone(resultSet.getString(4));
+                manufacturers.add(m);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return manufacturers;
+    }
+
+    public static void deleteManufacturer(int id) throws SQLException, ClassNotFoundException {
+        String selectMaterials = "Select * from material where ID_manufacturer = " + id;
+        ResultSet resultSet = DBUtil.dbExecuteQuery(selectMaterials);
+        if (resultSet.wasNull()){
+            String deleteStmtMaterial =
+                    "DELETE FROM manufacturer\n" +
+                            "WHERE ID_manufacturer = " + id + ";";
+            DBUtil.dbExecuteUpdate(deleteStmtMaterial);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Ошибка");
+            alert.setHeaderText("Невозможно удалить поставщика");
+            alert.setContentText("Убедитесь, что данный поставщик не используется в базе!");
+            alert.showAndWait();
+        }
+
+    }
+
+    public static void addManufacturer(Manufacturer manufacturer) throws SQLException, ClassNotFoundException {
+        String insert = "Insert into manufacturer (Name, Address, telephone) value ('" + manufacturer.getName() + "', '" +
+                manufacturer.getAddress() + "', '" + manufacturer.getTelephone() + "');";
+        DBUtil.dbExecuteUpdate(insert);
+    }
+
+
+    public static void updateManufacturer(Manufacturer manufacturer) {
+        String updateParameters =
+                "UPDATE manufacturer\n" +
+                        "SET Name = '" + manufacturer.getName() + "', Address = '" + manufacturer.getAddress() + "', telephone = '" +
+                        manufacturer.getTelephone() + "' WHERE ID_manufacturer=" + manufacturer.getId() + ";";
+        try {
+            DBUtil.dbExecuteUpdate(updateParameters);
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.print("Error occurred while UPDATE Operation: " + e);
         }
     }
 }

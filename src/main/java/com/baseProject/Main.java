@@ -33,7 +33,6 @@ public class Main extends Application {
         Scene scene = new Scene(loginPane);
         primaryStage.setScene(scene);
         primaryStage.show();
-
         LoginPassLayoutController loginPassLayoutController = loader.getController();
         loginPassLayoutController.setMain(this);
     }
@@ -98,6 +97,7 @@ public class Main extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
 
             FilterLayoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
@@ -123,6 +123,7 @@ public class Main extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
 
             DetailsLayoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
@@ -147,15 +148,37 @@ public class Main extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(pane);
             dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
 
             DetailsLayoutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
-            //controller.setCarbide(carbide);
             dialogStage.showAndWait();
             return controller.isOkClicked();
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public void showManufacturerAddDialog() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("View/AddManufacturerLayout.fxml"));
+            AnchorPane pane = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Добавление");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(pane);
+            dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
+
+            AddManufacturerLayoutController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
