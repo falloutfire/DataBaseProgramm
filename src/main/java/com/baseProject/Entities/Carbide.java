@@ -1,25 +1,22 @@
 package com.baseProject.Entities;
 
 import javafx.beans.property.*;
-import javafx.scene.image.Image;
-
-import java.awt.*;
 
 public class Carbide {
-    private IntegerProperty id;//
-    private StringProperty classCut;//
-    private StringProperty classDestroy;//
-    private IntegerProperty fractionNumber;//
-    private StringProperty typeOfUse;//
-    private IntegerProperty mark;//
-    private StringProperty color;//
-    private StringProperty manufacturer;//
-    private FloatProperty percentSiC;//
-    private FloatProperty percentFe;//
-    private FloatProperty percentC;//
+    private IntegerProperty id;
+    private StringProperty classCut;
+    private StringProperty classDestroy;
+    private IntegerProperty fractionNumber;
+    private StringProperty typeOfUse;
+    private IntegerProperty mark;
+    private StringProperty color;
+    private StringProperty manufacturer;
+    private FloatProperty percentSiC;
+    private FloatProperty percentFe;
+    private FloatProperty percentC;
     private FloatProperty valueDestroy;
     private FloatProperty valueCut;
-    //private Date date;
+    private FloatProperty price;
 
     public Carbide() {
         this.id = new SimpleIntegerProperty();
@@ -35,7 +32,7 @@ public class Carbide {
         this.percentC = new SimpleFloatProperty();
         this.valueDestroy = new SimpleFloatProperty();
         this.valueCut = new SimpleFloatProperty();
-
+        this.price = new SimpleFloatProperty();
     }
 
     public int getId() {
@@ -192,5 +189,17 @@ public class Carbide {
 
     public void setValueCut(float valueCut) {
         this.valueCut.set(valueCut);
+    }
+
+    public float getPrice() {
+        return price.get();
+    }
+
+    public void setPrice(float price) {
+        this.price.set(price);
+    }
+
+    public FloatProperty priceProperty() {
+        return price;
     }
 }

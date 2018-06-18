@@ -1,6 +1,6 @@
 package com.baseProject.FXMLControllers;
 
-import com.baseProject.DAO.CarbidDAO;
+import com.baseProject.DAO.CarbideDAO;
 import com.baseProject.Entities.Manufacturer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -34,7 +34,7 @@ public class AddManufacturerLayoutController {
             manufacturer.setTelephone(telephoneField.getText());
             manufacturer.setAddress(addressField.getText());
             try {
-                CarbidDAO.addManufacturer(manufacturer);
+                CarbideDAO.addManufacturer(manufacturer);
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
             }

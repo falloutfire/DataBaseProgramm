@@ -1,6 +1,6 @@
 package com.baseProject.FXMLControllers;
 
-import com.baseProject.DAO.CarbidDAO;
+import com.baseProject.DAO.CarbideDAO;
 import com.baseProject.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -66,11 +66,11 @@ public class FilterLayoutController {
         });
 
         try {
-            marks = CarbidDAO.getMarkCarbide();
-            cuts = CarbidDAO.getClassCut();
-            destroys = CarbidDAO.getClassDestroy();
-            manufacturers = CarbidDAO.getManufacturer();
-            fractions = CarbidDAO.getFractionNumber();
+            marks = CarbideDAO.getMarkCarbide();
+            cuts = com.baseProject.DAO.CarbideDAO.getClassCut();
+            destroys = com.baseProject.DAO.CarbideDAO.getClassDestroy();
+            manufacturers = com.baseProject.DAO.CarbideDAO.getManufacturer();
+            fractions = com.baseProject.DAO.CarbideDAO.getFractionNumber();
             marksComboBox.setItems(marks);
             cutComboBox.setItems(cuts);
             destroyComboBox.setItems(destroys);
@@ -96,27 +96,27 @@ public class FilterLayoutController {
 
     public void onClickSearch(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         if(mark != null){
-            mark = CarbidDAO.getComboParameters("mark", "Mark", mark);
+            mark = com.baseProject.DAO.CarbideDAO.getComboParameters("mark", "Mark", mark);
             queries.add("ID_mark = " + mark);
         }
         if(manufacturer != null){
-            mark = CarbidDAO.getComboParameters("manufacturer", "Name", manufacturer);
-            queries.add("ID_manufacturer = " + manufacturer);
+            manufacturer = com.baseProject.DAO.CarbideDAO.getComboParameters("manufacturer", "Name", manufacturer);
+            queries.add("ID_manufacturer = '" + manufacturer + "'");
         }
         if(cut != null){
-            cut = CarbidDAO.getComboParameters("class_of_cut", "Name_Class", cut);
+            cut = com.baseProject.DAO.CarbideDAO.getComboParameters("class_of_cut", "Name_Class", cut);
             queries.add("ID_Class_Cut = " + cut);
         }
         if(destroy != null){
-            destroy = CarbidDAO.getComboParameters("class_destroy", "Name_Class", destroy);
+            destroy = com.baseProject.DAO.CarbideDAO.getComboParameters("class_destroy", "Name_Class", destroy);
             queries.add("ID_Class_destroy = " + destroy);
         }
         if (fraction != null) {
-            fraction = CarbidDAO.getComboParameters("fractions", "F_number", fraction);
+            fraction = com.baseProject.DAO.CarbideDAO.getComboParameters("fractions", "F_number", fraction);
             queries.add("ID_fraction = " + fraction);
         }
 
-        main.getMainLayoutController().setCarbides(CarbidDAO.searchAllCarbides(queries));
+        main.getMainLayoutController().setCarbides(com.baseProject.DAO.CarbideDAO.searchAllCarbides(queries));
         dialogStage.close();
     }
 

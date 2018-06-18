@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baseProject.FXMLControllers.DetailsLayoutController">
    <children>
       <Label layoutX="14.0" layoutY="10.0" prefHeight="17.0" prefWidth="149.0" text="ID материала" />
@@ -31,18 +27,22 @@
       <TextField fx:id="percentSiCField" layoutX="135.0" layoutY="177.0" prefHeight="25.0" prefWidth="150.0" text="6" />
       <TextField fx:id="percentCField" layoutX="135.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" text="7" />
       <TextField fx:id="percentFeField" layoutX="135.0" layoutY="235.0" prefHeight="25.0" prefWidth="150.0" text="8" />
-      <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0" text="13" />
+       <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0"/>
+       <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0"/>
+       <TextField fx:id="priceField" layoutX="426.0" layoutY="235.0" prefHeight="17.0" prefWidth="149.0" text="13"/>
       <TextField fx:id="valueCutField" layoutX="426.0" layoutY="267.0" prefHeight="17.0" prefWidth="149.0" text="12" />
-      <ImageView fx:id="imageMaterialView" fitHeight="212.0" fitWidth="255.0" layoutX="325.0" layoutY="20.0" onMouseClicked="#onClickChooseImage" pickOnBounds="true" preserveRatio="true" />
+       <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0"
+                  text="13"/>
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickClose" text="Закрыть" />
       <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickUpdate" text="Изменить" />
       <Button layoutX="450.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickDelete" text="Удалить" />
+       <ImageView fx:id="imageMaterialView" fitHeight="212.0" fitWidth="255.0" layoutX="325.0" layoutY="20.0"
+                  onMouseClicked="#onClickChooseImage" pickOnBounds="true" preserveRatio="true"/>
       <Label fx:id="isUpdate" layoutX="89.0" layoutY="365.0" />
-      <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0" />
-      <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0" />
       <Separator layoutX="577.0" layoutY="14.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
       <Separator layoutX="322.0" layoutY="14.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
       <Separator layoutX="325.0" layoutY="14.0" prefHeight="5.0" prefWidth="255.0" />
       <Separator layoutX="325.0" layoutY="229.0" prefHeight="5.0" prefWidth="255.0" />
+       <Label layoutX="296.0" layoutY="239.0" prefHeight="17.0" prefWidth="149.0" text="Цена за кг"/>
    </children>
 </AnchorPane>

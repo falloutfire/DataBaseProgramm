@@ -5,10 +5,10 @@ import com.sun.rowset.CachedRowSetImpl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.sql.*;
 
 public class DBUtil {
+    private String ip = "192.168.40.253";
     private static final String url = "jdbc:mysql://localhost:3306/karbides?useSSL=false";
     private static final String user = "root";
     private static final String password = "polosin";
@@ -39,7 +39,7 @@ public class DBUtil {
         }
     }
 
-    public static ResultSet dbExecuteQuery(String queryStmt) throws SQLException, ClassNotFoundException {
+    public static ResultSet dbExecuteQuery(String queryStmt) throws SQLException {
 
         Statement stmt = null;
         ResultSet resultSet = null;
@@ -68,7 +68,7 @@ public class DBUtil {
     }
 
     //For Update/Insert/Delete operations
-    public static void dbExecuteUpdate(String sqlStmt) throws SQLException, ClassNotFoundException{
+    public static void dbExecuteUpdate(String sqlStmt) throws SQLException {
 
         Statement stmt = null;
         try{
@@ -91,7 +91,7 @@ public class DBUtil {
             pre = conn.prepareStatement(sqlStmt);
             FileInputStream fin = new FileInputStream(file);
             System.out.println(file);
-            pre.setBinaryStream(1,(InputStream)fin,(int)file.length());
+            pre.setBinaryStream(1, fin, (int) file.length());
             pre.executeUpdate();
         } catch (SQLException e){
             throw e;

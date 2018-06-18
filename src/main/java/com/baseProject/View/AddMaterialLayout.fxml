@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.baseProject.FXMLControllers.DetailsLayoutController">
    <children>
       <Label layoutX="14.0" layoutY="39.0" prefHeight="17.0" prefWidth="149.0" text="Производитель" />
@@ -29,15 +25,16 @@
       <TextField fx:id="percentSiCField" layoutX="135.0" layoutY="177.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="percentCField" layoutX="135.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="percentFeField" layoutX="135.0" layoutY="235.0" prefHeight="25.0" prefWidth="150.0" />
-      <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0" />
+       <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0"/>
+       <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0"/>
+       <TextField fx:id="priceField" layoutX="426.0" layoutY="235.0" prefHeight="17.0" prefWidth="149.0"/>
       <TextField fx:id="valueCutField" layoutX="426.0" layoutY="267.0" prefHeight="17.0" prefWidth="149.0" />
+       <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0"/>
+       <Label layoutX="296.0" layoutY="239.0" prefHeight="17.0" prefWidth="97.0" text="Цена за кг"/>
       <ImageView fx:id="imageMaterialView" fitHeight="212.0" fitWidth="255.0" layoutX="325.0" layoutY="20.0" onMouseClicked="#onClickChooseImage" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickClose" prefHeight="25.0" prefWidth="69.0" text="Закрыть" />
       <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickAdd" text="Добавить" />
-      <!--<Label fx:id="isUpdate" layoutX="89.0" layoutY="365.0" />-->
-      <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0" />
-      <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0" />
-      <Separator layoutX="325.0" layoutY="233.0" prefHeight="5.0" prefWidth="255.0" />
+       <Separator layoutX="325.0" layoutY="230.0" prefHeight="5.0" prefWidth="255.0"/>
       <Separator layoutX="325.0" layoutY="18.0" prefHeight="5.0" prefWidth="255.0" />
       <Separator layoutX="322.0" layoutY="18.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />
       <Separator layoutX="577.0" layoutY="18.0" orientation="VERTICAL" prefHeight="219.0" prefWidth="5.0" />

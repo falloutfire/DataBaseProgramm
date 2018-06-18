@@ -5,5 +5,7 @@ F:\projects\BaseComp\src\main\java\com\baseProject\Entities\Carbide.java
 F:\projects\BaseComp\src\main\java\com\baseProject\Main.java
 F:\projects\BaseComp\src\main\java\com\baseProject\FXMLControllers\DetailsLayoutController.java
 F:\projects\BaseComp\src\main\java\com\baseProject\Util\DBUtil.java
+F:\projects\BaseComp\src\main\java\com\baseProject\FXMLControllers\AddManufacturerLayoutController.java
 F:\projects\BaseComp\src\main\java\com\baseProject\FXMLControllers\RootLayoutController.java
 F:\projects\BaseComp\src\main\java\com\baseProject\DAO\CarbidDAO.java
+F:\projects\BaseComp\src\main\java\com\baseProject\Entities\Manufacturer.java

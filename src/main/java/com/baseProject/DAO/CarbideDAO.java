@@ -2,6 +2,7 @@ package com.baseProject.DAO;
 
 import com.baseProject.Entities.Carbide;
 import com.baseProject.Entities.Manufacturer;
+import com.baseProject.Entities.User;
 import com.baseProject.Util.DBUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +15,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CarbidDAO {
+public class CarbideDAO {
 
     //метод который собирает фильтры
     private static String setStmtQuery(ArrayList<String> queries) {
@@ -28,6 +29,18 @@ public class CarbidDAO {
             }
         System.out.println(stmtQuery);
         return stmtQuery;
+    }
+
+    public static User enterIn(String name) throws SQLException, ClassNotFoundException {
+        User user = new User();
+        String selectUser = "Select * from user where Name = '" + name + "';";
+        ResultSet rs = DBUtil.dbExecuteQuery(selectUser);
+        while (rs.next()) {
+            user.setName(rs.getString("Name"));
+            user.setPass(rs.getString("Pass"));
+            user.setAdmin(rs.getBoolean("isAdmin"));
+        }
+        return user;
     }
 
     private static Carbide searchMaterialBase(String materialId) throws SQLException, ClassNotFoundException {
@@ -83,6 +96,7 @@ public class CarbidDAO {
                 carbide.setPercentC(rsMatName.getFloat("Percent_C"));
                 carbide.setValueCut(rsMatName.getFloat("Value_Cut"));
                 carbide.setValueDestroy(rsMatName.getFloat("Value_Destroy"));
+                carbide.setPrice(rsMatName.getFloat("Price"));
             }
 
             return carbide;
@@ -284,11 +298,10 @@ public class CarbidDAO {
 
     public static void addMaterialInBase(Carbide carbide, File file){
         String addStmt = "Insert into material (Image, ID_Class_Cut, ID_Class_destroy, ID_fraction, ID_mark, ID_manufacturer," +
-                "Percent_SiC, Percent_Fe, Percent_C, Value_Destroy, Value_Cut) value ( ?, " + carbide.getClassCut() + "," +
+                "Percent_SiC, Percent_Fe, Percent_C, Value_Destroy, Value_Cut, Price) value ( ?, " + carbide.getClassCut() + "," +
                 carbide.getClassDestroy() + "," + carbide.getFractionNumber() + "," + carbide.getMark() + "," +
                 carbide.getManufacturer() + "," + carbide.getPercentSiC() + "," + carbide.getPercentFe() + "," +
-                carbide.getPercentC() + "," + carbide.getValueDestroy() + "," + carbide.getValueCut() + ");";
-
+                carbide.getPercentC() + "," + carbide.getValueDestroy() + "," + carbide.getValueCut() + "," + carbide.getPrice() + ");";
         try {
             DBUtil.dbExecuteImage(addStmt, file);
         } catch (SQLException e) {

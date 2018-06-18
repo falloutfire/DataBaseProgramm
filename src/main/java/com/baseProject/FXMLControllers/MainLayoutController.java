@@ -1,6 +1,6 @@
 package com.baseProject.FXMLControllers;
 
-import com.baseProject.DAO.CarbidDAO;
+import com.baseProject.DAO.CarbideDAO;
 import com.baseProject.Entities.Carbide;
 import com.baseProject.Entities.Manufacturer;
 import com.baseProject.Main;
@@ -12,7 +12,6 @@ import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
-import javafx.util.converter.IntegerStringConverter;
 
 import java.sql.SQLException;
 
@@ -38,6 +37,7 @@ public class MainLayoutController {
     public TableColumn<Carbide,Float> valueCutColumn;
     public TableColumn<Carbide,String> classDestroyColumn;
     public TableColumn<Carbide,Float> valueDestroyColumn;
+    public TableColumn<Carbide, Float> priceColumn;
     private Main main;
     private ObservableList<Carbide> carbides;
 
@@ -58,6 +58,7 @@ public class MainLayoutController {
         classDestroyColumn.setCellValueFactory(cellData -> cellData.getValue().classDestroyProperty());
         valueDestroyColumn.setCellValueFactory(cellData -> cellData.getValue().valueDestroyProperty().asObject());
         manufacturerColumn.setCellValueFactory(cellData -> cellData.getValue().manufacturerProperty());
+        priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 
         idManufColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         nameManufColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
@@ -73,7 +74,7 @@ public class MainLayoutController {
             if (newNameMaterial != null) {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
                 materialBase.setName(newNameMaterial);
-                CarbidDAO.updateManufacturer(materialBase);
+                CarbideDAO.updateManufacturer(materialBase);
                 updateTable();
             } else {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
@@ -87,7 +88,7 @@ public class MainLayoutController {
             if (newNameMaterial != null) {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
                 materialBase.setAddress(newNameMaterial);
-                CarbidDAO.updateManufacturer(materialBase);
+                CarbideDAO.updateManufacturer(materialBase);
                 updateTable();
             } else {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
@@ -101,7 +102,7 @@ public class MainLayoutController {
             if (newNameMaterial != null) {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
                 materialBase.setTelephone(newNameMaterial);
-                CarbidDAO.updateManufacturer(materialBase);
+                CarbideDAO.updateManufacturer(materialBase);
                 updateTable();
             } else {
                 Manufacturer materialBase = pos.getTableView().getItems().get(pos.getRow());
@@ -110,8 +111,8 @@ public class MainLayoutController {
             }
         });
 
-        ObservableList<Manufacturer> manufacturers = CarbidDAO.searchAllManufacturers();
-        ObservableList<Carbide> carbides = CarbidDAO.searchAllCarbides();
+        ObservableList<Manufacturer> manufacturers = CarbideDAO.searchAllManufacturers();
+        ObservableList<Carbide> carbides = CarbideDAO.searchAllCarbides();
         carbidesView.setItems(carbides);
         manufacturerView.setItems(manufacturers);
         manufacturerView.setEditable(true);
@@ -126,7 +127,7 @@ public class MainLayoutController {
 
     public void onClickDelete(ActionEvent actionEvent) {
         try {
-            CarbidDAO.deleteMaterialBase(carbidesView.getSelectionModel().getSelectedItem().getId());
+            CarbideDAO.deleteMaterialBase(carbidesView.getSelectionModel().getSelectedItem().getId());
             updateTable();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -157,8 +158,8 @@ public class MainLayoutController {
     }
 
     private void updateTable(){
-        carbides = CarbidDAO.searchAllCarbides();
-        ObservableList<Manufacturer> manufacturers = CarbidDAO.searchAllManufacturers();
+        carbides = CarbideDAO.searchAllCarbides();
+        ObservableList<Manufacturer> manufacturers = CarbideDAO.searchAllManufacturers();
         carbidesView.setItems(carbides);
         manufacturerView.setItems(manufacturers);
     }
@@ -176,7 +177,7 @@ public class MainLayoutController {
 
     public void onClickDeleteM(ActionEvent actionEvent) {
         try {
-            CarbidDAO.deleteManufacturer(manufacturerView.getSelectionModel().getSelectedItem().getId());
+            CarbideDAO.deleteManufacturer(manufacturerView.getSelectionModel().getSelectedItem().getId());
             updateTable();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

@@ -18,11 +18,4 @@ public class RootLayoutController {
     public void setMainApp(Main main) {
         this.main = main;
     }
-
-    public void handleChangePass(ActionEvent actionEvent) {
-        /*boolean okClicked = main.showChangePassDialog();
-        if(okClicked){
-            System.out.println("change complete");
-        }*/
-    }
 }

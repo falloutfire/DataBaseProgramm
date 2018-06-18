@@ -14,7 +14,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="749.0">
                      <children>
-                        <TableView fx:id="carbidesView" layoutX="22.0" layoutY="68.0" onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0">
+                        <TableView fx:id="carbidesView" layoutX="22.0" layoutY="68.0" onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="68.0">
                            <columns>
                               <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID" />
                               <TableColumn fx:id="markColumn" prefWidth="69.0" text="Марка" />
@@ -29,6 +29,7 @@
                               <TableColumn fx:id="valueCutColumn" prefWidth="106.0" text="Занчение резки" />
                               <TableColumn fx:id="classDestroyColumn" prefWidth="124.0" text="Класс разрушения" />
                               <TableColumn fx:id="valueDestroyColumn" prefWidth="140.0" text="Значение разрушения" />
+                              <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Цена за кг" />
                            </columns>
                         </TableView>
                         <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="82.0" text="Добавить" />
@@ -43,7 +44,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="manufacturerView" layoutX="21.0" layoutY="68.0" prefHeight="533.0" prefWidth="1254.0">
+                        <TableView fx:id="manufacturerView" layoutX="21.0" layoutY="68.0" prefHeight="533.0" prefWidth="1254.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="68.0">
                           <columns>
                             <TableColumn fx:id="idManufColumn" prefWidth="75.0" text="ID" />
                             <TableColumn fx:id="nameManufColumn" prefWidth="227.0" text="Название " />
