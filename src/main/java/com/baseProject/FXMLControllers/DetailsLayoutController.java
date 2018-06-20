@@ -113,12 +113,28 @@ public class DetailsLayoutController {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 classCut = String.valueOf(newValue);
+                if (classCutComboBox.getSelectionModel().getSelectedIndex() == 1) {
+                    valueCutField.setText("0.08");
+                } else if (classCutComboBox.getSelectionModel().getSelectedIndex() == 2) {
+                    valueCutField.setText("0.03");
+                } else {
+                    valueCutField.setText("0");
+                }
             }
         });
         classDestroyComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 classDestroy = String.valueOf(newValue);
+                if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 1) {
+                    valueDestroyField.setText("70");
+                } else if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 2) {
+                    valueDestroyField.setText("47");
+                } else if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 3) {
+                    valueDestroyField.setText("0.08");
+                } else {
+                    valueDestroyField.setText("0");
+                }
             }
         });
         addComboItems();
@@ -257,7 +273,7 @@ public class DetailsLayoutController {
             float cut = Float.parseFloat(valueCutField.getText());
             float dest = Float.parseFloat(valueDestroyField.getText());
             float pr = Float.parseFloat(priceField.getText());
-            if (0 < sic && sic < 100 && 0 < c && c < 100 && 0 < fe && fe < 100 && 0 < cut && cut < 100 && 0 < dest && dest < 100 && pr < 1000) {
+            if (0 < sic && sic < 100 && 0 < c && c < 100 && 0 < fe && fe < 100 && (0 < cut && cut < 100) ^ (0 < dest && dest < 100) && pr < 1000) {
                 if (file != null) {
                     carbide.setMark(Integer.parseInt(com.baseProject.DAO.CarbideDAO.getComboParameters("mark", "Mark", mark)));
                     carbide.setFractionNumber(Integer.parseInt(com.baseProject.DAO.CarbideDAO.getComboParameters("fractions", "F_number", fractionNumber)));
@@ -281,14 +297,18 @@ public class DetailsLayoutController {
                     alert.showAndWait();
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Ошибка");
-                alert.setHeaderText("Присутствует ошибка в одном из полей");
-                alert.setContentText("Проверьте все поля на наличие ошибок!");
-                alert.showAndWait();
+                getAlert();
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (SQLException | ClassNotFoundException | NumberFormatException e) {
+            getAlert();
         }
+    }
+
+    private void getAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText("Присутствует ошибка в одном из полей");
+        alert.setContentText("Проверьте все поля на наличие ошибок!");
+        alert.showAndWait();
     }
 }

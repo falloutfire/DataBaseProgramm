@@ -31,7 +31,7 @@ public class CarbideDAO {
         return stmtQuery;
     }
 
-    public static User enterIn(String name) throws SQLException, ClassNotFoundException {
+    public static User enterIn(String name) throws SQLException {
         User user = new User();
         String selectUser = "Select * from user where Name = '" + name + "';";
         ResultSet rs = DBUtil.dbExecuteQuery(selectUser);
@@ -43,7 +43,7 @@ public class CarbideDAO {
         return user;
     }
 
-    private static Carbide searchMaterialBase(String materialId) throws SQLException, ClassNotFoundException {
+    private static Carbide searchMaterialBase(String materialId) throws SQLException {
         //Declare a SELECT statement
         String selectStmtName = "Select * from material where ID_Material = " + materialId;
 
@@ -121,8 +121,24 @@ public class CarbideDAO {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
         return carbides;
+    }
+
+    public static boolean searchAllCarbidesCheck() {
+
+        ObservableList<Carbide> carbides = FXCollections.observableArrayList();
+        String selectStmt = "Select ID_Material from material";
+        try {
+            ResultSet resultSet = DBUtil.dbExecuteQuery(selectStmt);
+            while (resultSet.next()) {
+                String materialId = String.valueOf(resultSet.getInt("ID_Material"));
+                carbides.add(searchMaterialBase(materialId));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     public static ObservableList<Carbide> searchAllCarbides(ArrayList<String> queries) {
@@ -144,7 +160,7 @@ public class CarbideDAO {
         return carbides;
     }
 
-    public static ObservableList<String> getMarkCarbide() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getMarkCarbide() throws SQLException {
         ObservableList<String> marks = FXCollections.observableArrayList();
         String markStmt = "Select Mark from mark";
         ResultSet resultMark = DBUtil.dbExecuteQuery(markStmt);
@@ -154,7 +170,7 @@ public class CarbideDAO {
         return marks;
     }
 
-    public static ObservableList<String> getManufacturer() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getManufacturer() throws SQLException {
         ObservableList<String> manufacturers = FXCollections.observableArrayList();
         String manufStmt = "Select Name from manufacturer";
         ResultSet resultManuf = DBUtil.dbExecuteQuery(manufStmt);
@@ -164,7 +180,7 @@ public class CarbideDAO {
         return manufacturers;
     }
 
-    public static ObservableList<String> getClassDestroy() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getClassDestroy() throws SQLException {
         ObservableList<String> destroys = FXCollections.observableArrayList();
         String destroyStmt = "Select Name_Class from class_destroy";
         ResultSet resultSet = DBUtil.dbExecuteQuery(destroyStmt);
@@ -174,7 +190,7 @@ public class CarbideDAO {
         return destroys;
     }
 
-    public static ObservableList<String> getClassCut() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getClassCut() throws SQLException {
         ObservableList<String> cuts = FXCollections.observableArrayList();
         String cutsStmt = "Select Name_Class from class_of_cut";
         ResultSet resultSet = DBUtil.dbExecuteQuery(cutsStmt);
@@ -184,7 +200,7 @@ public class CarbideDAO {
         return cuts;
     }
 
-    public static ObservableList<String> getTypeOfUse() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getTypeOfUse() throws SQLException {
         ObservableList<String> cuts = FXCollections.observableArrayList();
         String cutsStmt = "Select Name_of_Type from type_of_use";
         ResultSet resultSet = DBUtil.dbExecuteQuery(cutsStmt);
@@ -194,7 +210,7 @@ public class CarbideDAO {
         return cuts;
     }
 
-    public static ObservableList<String> getFractionNumber() throws SQLException, ClassNotFoundException {
+    public static ObservableList<String> getFractionNumber() throws SQLException {
         ObservableList<String> cuts = FXCollections.observableArrayList();
         String cutsStmt = "Select F_number from fractions";
         ResultSet resultSet = DBUtil.dbExecuteQuery(cutsStmt);
@@ -204,7 +220,7 @@ public class CarbideDAO {
         return cuts;
     }
 
-    public static String getColor(String mark) throws SQLException, ClassNotFoundException {
+    public static String getColor(String mark) throws SQLException {
         String markStmt = "Select Color from mark where mark = " + mark;
         String color = "_";
         ResultSet resultMark = DBUtil.dbExecuteQuery(markStmt);
@@ -214,7 +230,7 @@ public class CarbideDAO {
         return color;
     }
 
-    public static Image getImageMaterial(String materialId) throws SQLException, ClassNotFoundException, IOException {
+    public static Image getImageMaterial(String materialId) throws SQLException, IOException {
         Image image;
         String selectImage = "Select Image from material where ID_material = '" + materialId + "'";
         ResultSet resultSet = DBUtil.dbExecuteQuery(selectImage);
@@ -245,12 +261,12 @@ public class CarbideDAO {
                         "WHERE ID_material=" + carbide.getId() + ";";
         try {
             DBUtil.dbExecuteUpdate(updateParameters);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.print("Error occurred while UPDATE Operation: " + e);
         }
     }
 
-    public static void setComboParameters(Carbide carbide, String table, String nameParameter, String value) throws SQLException, ClassNotFoundException {
+    public static void setComboParameters(Carbide carbide, String table, String nameParameter, String value) throws SQLException {
         String selectParameter = "Select * from " + table +
                 " where " + nameParameter + " = '" + value + "'";
         String idParameter = "0";
@@ -283,13 +299,13 @@ public class CarbideDAO {
                 numbers.add(resultSetNumbers.getString(1));
             }
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return numbers;
     }
 
-    public static void deleteMaterialBase(int materialId) throws SQLException, ClassNotFoundException {
+    public static void deleteMaterialBase(int materialId) throws SQLException {
         String deleteStmtMaterial =
                 "DELETE FROM material\n" +
                         "WHERE ID_material = " + materialId + ";";
@@ -309,7 +325,7 @@ public class CarbideDAO {
         }
     }
 
-    public static String getComboParameters(String table, String nameParameter, String value) throws SQLException, ClassNotFoundException {
+    public static String getComboParameters(String table, String nameParameter, String value) throws SQLException {
         String selectParameter = "Select * from " + table +
                 " where " + nameParameter + " = '" + value + "'";
         String idParameter = "0";
@@ -342,13 +358,13 @@ public class CarbideDAO {
                 m.setTelephone(resultSet.getString(4));
                 manufacturers.add(m);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return manufacturers;
     }
 
-    public static void deleteManufacturer(int id) throws SQLException, ClassNotFoundException {
+    public static void deleteManufacturer(int id) throws SQLException {
         String selectMaterials = "Select * from material where ID_manufacturer = " + id;
         ResultSet resultSet = DBUtil.dbExecuteQuery(selectMaterials);
         if (resultSet.wasNull()){
@@ -366,7 +382,7 @@ public class CarbideDAO {
 
     }
 
-    public static void addManufacturer(Manufacturer manufacturer) throws SQLException, ClassNotFoundException {
+    public static void addManufacturer(Manufacturer manufacturer) throws SQLException {
         String insert = "Insert into manufacturer (Name, Address, telephone) value ('" + manufacturer.getName() + "', '" +
                 manufacturer.getAddress() + "', '" + manufacturer.getTelephone() + "');";
         DBUtil.dbExecuteUpdate(insert);
@@ -380,7 +396,7 @@ public class CarbideDAO {
                         manufacturer.getTelephone() + "' WHERE ID_manufacturer=" + manufacturer.getId() + ";";
         try {
             DBUtil.dbExecuteUpdate(updateParameters);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.print("Error occurred while UPDATE Operation: " + e);
         }
     }

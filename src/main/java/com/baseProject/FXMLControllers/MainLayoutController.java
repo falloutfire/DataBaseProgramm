@@ -40,6 +40,7 @@ public class MainLayoutController {
     public TableColumn<Carbide, Float> priceColumn;
     private Main main;
     private ObservableList<Carbide> carbides;
+    private boolean isUser = false;
 
     public MainLayoutController() {
     }
@@ -144,12 +145,16 @@ public class MainLayoutController {
 
     @FXML
     public void onClickShowDetails(MouseEvent event){
-        if(event.getClickCount() == 2){
+        if (event.getClickCount() == 2 && !isUser) {
             boolean okClicked = main.showMaterialDetailDialog(carbidesView.getSelectionModel().getSelectedItem());
             if (okClicked) {
                 updateTable();
             }
-
+        } else if (event.getClickCount() == 2 && isUser) {
+            boolean okClicked = main.showMaterialDetailDialogUser(carbidesView.getSelectionModel().getSelectedItem());
+            if (okClicked) {
+                updateTable();
+            }
         }
     }
 
@@ -186,5 +191,9 @@ public class MainLayoutController {
 
     public void onClickShowAllM(ActionEvent actionEvent) {
         updateTable();
+    }
+
+    public void setUser(boolean user) {
+        isUser = user;
     }
 }

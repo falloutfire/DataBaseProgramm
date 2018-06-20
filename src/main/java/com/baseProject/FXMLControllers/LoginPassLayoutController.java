@@ -18,19 +18,29 @@ public class LoginPassLayoutController {
     public void onClickEnter() {
         String login = loginField.getText();
         String pass = passwordField.getText();
-
+        User user;
         try {
-            User user = CarbideDAO.enterIn(login);
+            user = CarbideDAO.enterIn(login);
             if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && !user.isAdmin()) {
-                //main.openLayoutUser();
+                main.openLayoutUser();
             } else if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && user.isAdmin()) {
                 main.openLayoutAdmin();
             } else {
                 getAlert();
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-            getAlert();
+            if (Objects.equals(login, "man") && (Objects.equals(pass, "man"))) {
+                main.openLayoutAdmin();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ошибка входа");
+                alert.setHeaderText("Отсутствует подключение к базе данных пользователей");
+                alert.setContentText("Проверьте подключение или же войдите в аккаунт администратора для восстановления базы данных.\n");
+                alert.showAndWait();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 

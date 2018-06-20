@@ -1,7 +1,9 @@
 package com.baseProject;
 
+import com.baseProject.DAO.CarbideDAO;
 import com.baseProject.Entities.Carbide;
 import com.baseProject.FXMLControllers.*;
+import com.baseProject.Util.DBUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -23,6 +26,15 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Carbides DataBase");
         primaryStage.sizeToScene();
+        if (CarbideDAO.searchAllCarbidesCheck()) {
+            File pathFile = new File("backUp");
+            pathFile.mkdir();
+            try {
+                DBUtil.dbBackUp(pathFile + "\\backUp.sql");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         showLoginPassLayout();
     }
 
@@ -65,7 +77,42 @@ public class Main extends Application {
             primaryStage.show();
 
             RootLayoutController rootLayoutUserController = loader.getController();
-            //rootLayoutUserController.setMainApp(this);
+            rootLayoutUserController.setMainApp(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showDataBaseLayoutUser() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("View/UserMainLayout.fxml"));
+            AnchorPane mainPane = loader.load();
+
+            rootLayout.setCenter(mainPane);
+
+            mainLayoutController = loader.getController();
+            mainLayoutController.setMain(this);
+            mainLayoutController.setUser(true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showRootDataBaseLayoutUser() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("View/RootUserLayout.fxml"));
+            rootLayout = loader.load();
+
+            Scene scene = new Scene(rootLayout);
+
+            primaryStage.setScene(scene);
+            primaryStage.setMaximized(true);
+            primaryStage.show();
+
+            RootLayoutController rootLayoutUserController = loader.getController();
+            rootLayoutUserController.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,6 +121,11 @@ public class Main extends Application {
     public void openLayoutAdmin() {
         showRootDataBaseLayout();
         showDataBaseLayout();
+    }
+
+    public void openLayoutUser() {
+        showRootDataBaseLayoutUser();
+        showDataBaseLayoutUser();
     }
 
     public void aboutWindow() {
@@ -115,6 +167,31 @@ public class Main extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("View/DetailsLayout.fxml"));
+            AnchorPane pane = loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Информация");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(pane);
+            dialogStage.setScene(scene);
+            dialogStage.setResizable(false);
+
+            DetailsLayoutController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setCarbide(carbide);
+            dialogStage.showAndWait();
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showMaterialDetailDialogUser(Carbide carbide) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("View/DetailsLayoutUser.fxml"));
             AnchorPane pane = loader.load();
 
             Stage dialogStage = new Stage();
@@ -184,5 +261,9 @@ public class Main extends Application {
 
     public MainLayoutController getMainLayoutController() {
         return mainLayoutController;
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
     }
 }

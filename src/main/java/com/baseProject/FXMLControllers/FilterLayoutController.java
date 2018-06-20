@@ -7,6 +7,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -19,6 +20,12 @@ public class FilterLayoutController {
     public ComboBox cutComboBox;
     public ComboBox manufacturerComboBox;
     public ComboBox fractionsComboBox;
+    public TextField sicFromField;
+    public TextField sicToField;
+    public TextField cFromField;
+    public TextField feFromField;
+    public TextField cToField;
+    public TextField feToField;
     private Stage dialogStage;
     private boolean okClicked = false;
     private ArrayList<String> queries = new ArrayList<>();
@@ -29,6 +36,12 @@ public class FilterLayoutController {
     private String fraction;
     private ObservableList<String> marks, cuts, destroys, manufacturers, fractions;
     private Main main;
+    private String sicFrom;
+    private String sicTo;
+    private String cFrom;
+    private String cTo;
+    private String feFrom;
+    private String feTo;
 
     public FilterLayoutController() {
     }
@@ -115,6 +128,33 @@ public class FilterLayoutController {
             fraction = com.baseProject.DAO.CarbideDAO.getComboParameters("fractions", "F_number", fraction);
             queries.add("ID_fraction = " + fraction);
         }
+
+        sicFrom = sicFromField.getText();
+        sicTo = sicToField.getText();
+        cFrom = cFromField.getText();
+        cTo = cToField.getText();
+        feFrom = feFromField.getText();
+        feTo = feToField.getText();
+
+        if (sicFrom.length() > 0) {
+            queries.add("Percent_SiC > " + sicFromField.getText());
+        }
+        if (sicTo.length() > 0) {
+            queries.add("Percent_SiC < " + sicToField.getText());
+        }
+        if (cFrom.length() > 0) {
+            queries.add("Percent_C > " + cFromField.getText());
+        }
+        if (cTo.length() > 0) {
+            queries.add("Percent_C <" + cToField.getText());
+        }
+        if (feFrom.length() > 0) {
+            queries.add("Percent_Fe > " + feFromField.getText());
+        }
+        if (feTo.length() > 0) {
+            queries.add("Percent_Fe < " + feToField.getText());
+        }
+
 
         main.getMainLayoutController().setCarbides(com.baseProject.DAO.CarbideDAO.searchAllCarbides(queries));
         dialogStage.close();

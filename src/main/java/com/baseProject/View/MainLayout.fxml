@@ -31,10 +31,14 @@
                                <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Цена за кг"/>
                            </columns>
                         </TableView>
-                        <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="82.0" text="Добавить" />
-                        <Button layoutX="126.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="133.0" text="Удалить выбранный" />
-                        <Button layoutX="267.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickShowAll" prefHeight="25.0" prefWidth="103.0" text="Показать все" />
-                        <Button layoutX="378.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickFilter" text="Фильтры" />
+                         <Button layoutX="22.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickAdd"
+                                 prefHeight="25.0" prefWidth="82.0" text="Добавить"/>
+                         <Button layoutX="114.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickDelete"
+                                 prefHeight="25.0" prefWidth="133.0" text="Удалить выбранный"/>
+                         <Button layoutX="257.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickShowAll"
+                                 prefHeight="25.0" prefWidth="103.0" text="Показать все"/>
+                         <Button layoutX="371.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickFilter"
+                                 text="Фильтры"/>
                      </children>
                   </AnchorPane>
             </content>

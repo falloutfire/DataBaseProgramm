@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="com.baseProject.FXMLControllers.MainLayoutController">
+    <children>
+        <TabPane layoutY="11.0" prefHeight="689.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <tabs>
+                <Tab text="Карбиды">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="749.0">
+                            <children>
+                                <TableView fx:id="carbidesView" layoutX="22.0" layoutY="68.0"
+                                           onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0"
+                                           AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="22.0"
+                                           AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="68.0">
+                                    <columns>
+                                        <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID"/>
+                                        <TableColumn fx:id="markColumn" prefWidth="69.0" text="Марка"/>
+                                        <TableColumn fx:id="manufacturerColumn" prefWidth="120.0" text="Производитель"/>
+                                        <TableColumn fx:id="colorColumn" prefWidth="100.0" text="Цвет"/>
+                                        <TableColumn fx:id="fractionColumn" prefWidth="64.0" text="Фракция"/>
+                                        <TableColumn fx:id="percentSicColumn" prefWidth="89.0" text="Процент SiC"/>
+                                        <TableColumn fx:id="percentFeColumn" prefWidth="73.0" text="Процент Fe"/>
+                                        <TableColumn fx:id="percentcColumn" prefWidth="76.0" text="Процент C"/>
+                                        <TableColumn fx:id="typeOfUSeColumn" prefWidth="153.0"
+                                                     text="Тип использования"/>
+                                        <TableColumn fx:id="classCutColumn" prefWidth="96.0" text="Класс резки"/>
+                                        <TableColumn fx:id="valueCutColumn" prefWidth="106.0" text="Занчение резки"/>
+                                        <TableColumn fx:id="classDestroyColumn" prefWidth="124.0"
+                                                     text="Класс разрушения"/>
+                                        <TableColumn fx:id="valueDestroyColumn" prefWidth="140.0"
+                                                     text="Значение разрушения"/>
+                                        <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Цена за кг"/>
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="22.0" layoutY="30.0" mnemonicParsing="false" onAction="#onClickShowAll"
+                                        prefHeight="25.0" prefWidth="103.0" text="Показать все"/>
+                                <Button layoutX="136.0" layoutY="30.0" mnemonicParsing="false" onAction="#onClickFilter"
+                                        text="Фильтры"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Поставщики">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="manufacturerView" layoutX="21.0" layoutY="68.0" prefHeight="533.0"
+                                           prefWidth="1254.0" AnchorPane.bottomAnchor="59.0"
+                                           AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="25.0"
+                                           AnchorPane.topAnchor="68.0">
+                                    <columns>
+                                        <TableColumn fx:id="idManufColumn" prefWidth="75.0" text="ID"/>
+                                        <TableColumn fx:id="nameManufColumn" prefWidth="227.0" text="Название "/>
+                                        <TableColumn fx:id="adressColumn" prefWidth="527.0" text="Адрес"/>
+                                        <TableColumn fx:id="telColumn" prefWidth="75.0" text="Телефон"/>
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="21.0" layoutY="33.0" mnemonicParsing="false"
+                                        onAction="#onClickShowAllM" prefHeight="25.0" prefWidth="137.0"
+                                        text="Показать все"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
