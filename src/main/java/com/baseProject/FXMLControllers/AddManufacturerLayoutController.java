@@ -35,7 +35,7 @@ public class AddManufacturerLayoutController {
             manufacturer.setAddress(addressField.getText());
             try {
                 CarbideDAO.addManufacturer(manufacturer);
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
             dialogStage.close();

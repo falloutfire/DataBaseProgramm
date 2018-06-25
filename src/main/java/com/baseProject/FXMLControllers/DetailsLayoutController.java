@@ -52,6 +52,8 @@ public class DetailsLayoutController {
     private ObservableList<String> markArray,fractionNumberArray, typeOfUseArray,
             classCutArray, classDestroyArray, manufacturerArray;
     private File file;
+    private float cut, deltaCut;
+    private float destroy, deltaDestroy;
 
     public DetailsLayoutController() {
     }
@@ -89,7 +91,7 @@ public class DetailsLayoutController {
                 mark = String.valueOf(newValue);
                 try {
                     colorTextField.setText(CarbideDAO.getColor(mark));
-                } catch (SQLException | ClassNotFoundException e) {
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
@@ -109,15 +111,23 @@ public class DetailsLayoutController {
                 fractionNumberComboBox.getSelectionModel().select(0);
             }
         });
+
+        //TODO add editing parameters
         classCutComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 classCut = String.valueOf(newValue);
                 if (classCutComboBox.getSelectionModel().getSelectedIndex() == 1) {
+                    deltaCut = 0.029f;
+                    cut = 0.08f;
                     valueCutField.setText("0.08");
                 } else if (classCutComboBox.getSelectionModel().getSelectedIndex() == 2) {
+                    deltaCut = 0.2f;
+                    cut = 0.03f;
                     valueCutField.setText("0.03");
                 } else {
+                    deltaCut = 0;
+                    cut = 0;
                     valueCutField.setText("0");
                 }
             }
@@ -127,12 +137,20 @@ public class DetailsLayoutController {
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                 classDestroy = String.valueOf(newValue);
                 if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 1) {
+                    deltaDestroy = 19;
+                    destroy = 70;
                     valueDestroyField.setText("70");
                 } else if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 2) {
-                    valueDestroyField.setText("47");
+                    deltaDestroy = 20;
+                    destroy = 30;
+                    valueDestroyField.setText("30");
                 } else if (classDestroyComboBox.getSelectionModel().getSelectedIndex() == 3) {
+                    deltaDestroy = 0.02f;
+                    destroy = 0.08f;
                     valueDestroyField.setText("0.08");
                 } else {
+                    deltaDestroy = 0;
+                    destroy = 0;
                     valueDestroyField.setText("0");
                 }
             }
@@ -156,7 +174,7 @@ public class DetailsLayoutController {
             typeOfUseComboBox.setItems(typeOfUseArray);
             fractionNumberComboBox.setItems(fractionNumberArray);
             manufacturerComboBox.setItems(manufacturerArray);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -172,8 +190,12 @@ public class DetailsLayoutController {
         carbide.setTypeOfUse(typeOfUse);
         carbide.setClassCut(classCut);
         carbide.setClassDestroy(classDestroy);
-        carbide.setValueCut(Float.parseFloat(valueCutField.getText()));
-        carbide.setValueDestroy(Float.parseFloat(valueDestroyField.getText()));
+        if (Math.abs(Float.parseFloat(valueCutField.getText()) - cut) <= deltaCut && Math.abs(Float.parseFloat(valueDestroyField.getText()) - destroy) <= deltaDestroy) {
+            carbide.setValueCut(Float.parseFloat(valueCutField.getText()));
+            carbide.setValueDestroy(Float.parseFloat(valueDestroyField.getText()));
+        } else {
+            getAlert();
+        }
         carbide.setManufacturer(manufacturer);
         carbide.setPrice(Float.parseFloat(priceField.getText()));
 
@@ -192,8 +214,9 @@ public class DetailsLayoutController {
             if(file != null){
                 com.baseProject.DAO.CarbideDAO.setImage(carbide, file);
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
+            getAlert();
         }
         isUpdate.setText("Материал обновлен");
     }
@@ -202,7 +225,7 @@ public class DetailsLayoutController {
         try {
             com.baseProject.DAO.CarbideDAO.deleteMaterialBase(carbide.getId());
             dialogStage.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -231,7 +254,7 @@ public class DetailsLayoutController {
         try {
             image = com.baseProject.DAO.CarbideDAO.getImageMaterial(String.valueOf(carbide.getId()));
             imageMaterialView.setImage(image);
-        } catch (SQLException | ClassNotFoundException | IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -273,7 +296,7 @@ public class DetailsLayoutController {
             float cut = Float.parseFloat(valueCutField.getText());
             float dest = Float.parseFloat(valueDestroyField.getText());
             float pr = Float.parseFloat(priceField.getText());
-            if (0 < sic && sic < 100 && 0 < c && c < 100 && 0 < fe && fe < 100 && (0 < cut && cut < 100) ^ (0 < dest && dest < 100) && pr < 1000) {
+            if (0 < sic && sic < 100 && 0 < c && c < 100 && 0 < fe && fe < 100 && (0 < cut && cut < 100) ^ (0 < dest && dest < 100) && pr < 1000 && Math.abs(Float.parseFloat(valueCutField.getText()) - cut) <= deltaCut && Math.abs(Float.parseFloat(valueDestroyField.getText()) - destroy) <= deltaDestroy) {
                 if (file != null) {
                     carbide.setMark(Integer.parseInt(com.baseProject.DAO.CarbideDAO.getComboParameters("mark", "Mark", mark)));
                     carbide.setFractionNumber(Integer.parseInt(com.baseProject.DAO.CarbideDAO.getComboParameters("fractions", "F_number", fractionNumber)));
@@ -299,7 +322,7 @@ public class DetailsLayoutController {
             } else {
                 getAlert();
             }
-        } catch (SQLException | ClassNotFoundException | NumberFormatException e) {
+        } catch (SQLException | NumberFormatException e) {
             getAlert();
         }
     }

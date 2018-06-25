@@ -14,30 +14,26 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 
-import java.sql.SQLException;
-
-
-public class MainLayoutController {
-
+public class MainUserLayoutController {
     public TableView<Manufacturer> manufacturerView;
     public TableColumn<Manufacturer, Integer> idManufColumn;
-    public TableColumn<Manufacturer,String> nameManufColumn;
+    public TableColumn<Manufacturer, String> nameManufColumn;
     public TableColumn<Manufacturer, String> adressColumn;
     public TableColumn<Manufacturer, String> telColumn;
     public TableView<Carbide> carbidesView;
-    public TableColumn<Carbide,Integer> idColumn;
-    public TableColumn<Carbide,Integer> markColumn;
-    public TableColumn<Carbide,String> manufacturerColumn;
-    public TableColumn<Carbide,String> colorColumn;
-    public TableColumn<Carbide,Integer> fractionColumn;
-    public TableColumn<Carbide,Float> percentSicColumn;
-    public TableColumn<Carbide,Float> percentFeColumn;
-    public TableColumn<Carbide,Float> percentcColumn;
-    public TableColumn<Carbide,String> typeOfUSeColumn;
-    public TableColumn<Carbide,String> classCutColumn;
-    public TableColumn<Carbide,Float> valueCutColumn;
-    public TableColumn<Carbide,String> classDestroyColumn;
-    public TableColumn<Carbide,Float> valueDestroyColumn;
+    public TableColumn<Carbide, Integer> idColumn;
+    public TableColumn<Carbide, Integer> markColumn;
+    public TableColumn<Carbide, String> manufacturerColumn;
+    public TableColumn<Carbide, String> colorColumn;
+    public TableColumn<Carbide, Integer> fractionColumn;
+    public TableColumn<Carbide, Float> percentSicColumn;
+    public TableColumn<Carbide, Float> percentFeColumn;
+    public TableColumn<Carbide, Float> percentcColumn;
+    public TableColumn<Carbide, String> typeOfUSeColumn;
+    public TableColumn<Carbide, String> classCutColumn;
+    public TableColumn<Carbide, Float> valueCutColumn;
+    public TableColumn<Carbide, String> classDestroyColumn;
+    public TableColumn<Carbide, Float> valueDestroyColumn;
     public TableColumn<Carbide, Float> priceColumn;
     public TableView<User> userView;
     public TableColumn<User, String> nameUserColumn;
@@ -47,10 +43,10 @@ public class MainLayoutController {
     private ObservableList<Carbide> carbides;
     private boolean isUser = false;
 
-    public MainLayoutController() {
+    public MainUserLayoutController() {
     }
 
-    public void initialize(){
+    public void initialize() {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         markColumn.setCellValueFactory(cellData -> cellData.getValue().markProperty().asObject());
         colorColumn.setCellValueFactory(cellData -> cellData.getValue().colorProperty());
@@ -73,14 +69,6 @@ public class MainLayoutController {
         nameManufColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         adressColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         telColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-
-        nameUserColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        passColumn.setCellValueFactory(cellData -> cellData.getValue().passProperty());
-        isAdminColumn.setCellValueFactory(cellData -> cellData.getValue().isAdminProperty());
-
-        nameUserColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        passColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        //isAdminColumn.setCellFactory(TextFieldTableCell.forTableColumn().);
 
         nameManufColumn.setOnEditCommit(event -> {
             TablePosition<Manufacturer, String> pos = event.getTablePosition();
@@ -125,34 +113,11 @@ public class MainLayoutController {
             }
         });
 
-        ObservableList<User> users = null;
-        try {
-            users = CarbideDAO.searchAllUsers();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         ObservableList<Manufacturer> manufacturers = CarbideDAO.searchAllManufacturers();
         ObservableList<Carbide> carbides = CarbideDAO.searchAllCarbides();
-        userView.setItems(users);
         carbidesView.setItems(carbides);
         manufacturerView.setItems(manufacturers);
         manufacturerView.setEditable(true);
-    }
-
-    public void onClickAdd(ActionEvent actionEvent) {
-        boolean okClicked = main.showMaterialAddDialog();
-        if (okClicked) {
-            updateTable();
-        }
-    }
-
-    public void onClickDelete(ActionEvent actionEvent) {
-        try {
-            CarbideDAO.deleteMaterialBase(carbidesView.getSelectionModel().getSelectedItem().getId());
-            updateTable();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public void onClickShowAll(ActionEvent actionEvent) {
@@ -164,9 +129,9 @@ public class MainLayoutController {
     }
 
     @FXML
-    public void onClickShowDetails(MouseEvent event){
-        if (event.getClickCount() == 2 && !isUser) {
-            boolean okClicked = main.showMaterialDetailDialog(carbidesView.getSelectionModel().getSelectedItem());
+    public void onClickShowDetails(MouseEvent event) {
+        if (event.getClickCount() == 2 && isUser) {
+            boolean okClicked = main.showMaterialDetailDialogUser(carbidesView.getSelectionModel().getSelectedItem());
             if (okClicked) {
                 updateTable();
             }
@@ -177,31 +142,11 @@ public class MainLayoutController {
         this.main = main;
     }
 
-    private void updateTable(){
+    private void updateTable() {
         carbides = CarbideDAO.searchAllCarbides();
         ObservableList<Manufacturer> manufacturers = CarbideDAO.searchAllManufacturers();
         carbidesView.setItems(carbides);
         manufacturerView.setItems(manufacturers);
-    }
-
-    void setCarbides(ObservableList<Carbide> carbides) {
-        this.carbides = carbides;
-        carbidesView.getItems().clear();
-        carbidesView.setItems(carbides);
-    }
-
-    public void onClickAddM(ActionEvent actionEvent) {
-        main.showManufacturerAddDialog();
-        updateTable();
-    }
-
-    public void onClickDeleteM(ActionEvent actionEvent) {
-        try {
-            CarbideDAO.deleteManufacturer(manufacturerView.getSelectionModel().getSelectedItem().getId());
-            updateTable();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public void onClickShowAllM(ActionEvent actionEvent) {

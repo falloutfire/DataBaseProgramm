@@ -64,6 +64,37 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Пользователи">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <TableView fx:id="userView" layoutX="47.0" layoutY="70.0" prefHeight="463.0"
+                                       prefWidth="1207.0">
+                                <columns>
+                                    <TableColumn fx:id="nameUserColumn" prefWidth="227.0" text="Имя пользователя"/>
+                                    <TableColumn fx:id="passColumn" prefWidth="206.0" text="Пароль"/>
+                                    <TableColumn fx:id="isAdminColumn" prefWidth="210.0" text="Права администратора"/>
+                                </columns>
+                            </TableView>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <!--<Tab text="Пользователи">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="userView" layoutX="39.0" layoutY="58.0" prefHeight="475.0" prefWidth="1215.0">
+                           <columns>
+                              <TableColumn fx:id="nameUserColumn" prefWidth="227.0" text="Имя пользователя" />
+                              <TableColumn fx:id="passColumn" prefWidth="205.0" text="Пароль" />
+                              <TableColumn fx:id="isAdminColumn" prefWidth="148.0" text="Права администратора" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>-->
         </tabs>
       </TabPane>
    </children>

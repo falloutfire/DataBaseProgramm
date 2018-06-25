@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -14,7 +12,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="749.0">
                      <children>
-                        <TableView fx:id="carbidesView" layoutX="22.0" layoutY="68.0" onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="68.0">
+                         <TableView fx:id="carbidesView" layoutX="22.0" layoutY="68.0" onMouseClicked="#onClickShowDetails" prefHeight="564.0" prefWidth="1256.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="68.0">
                            <columns>
                               <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID" />
                               <TableColumn fx:id="markColumn" prefWidth="69.0" text="Марка" />
@@ -29,13 +27,13 @@
                               <TableColumn fx:id="valueCutColumn" prefWidth="106.0" text="Занчение резки" />
                               <TableColumn fx:id="classDestroyColumn" prefWidth="124.0" text="Класс разрушения" />
                               <TableColumn fx:id="valueDestroyColumn" prefWidth="140.0" text="Значение разрушения" />
-                              <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Цена за кг" />
+                               <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Цена за кг" />
                            </columns>
                         </TableView>
-                        <Button layoutX="36.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="82.0" text="Добавить" />
-                        <Button layoutX="126.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="133.0" text="Удалить выбранный" />
-                        <Button layoutX="267.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickShowAll" prefHeight="25.0" prefWidth="103.0" text="Показать все" />
-                        <Button layoutX="378.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickFilter" text="Фильтры" />
+                         <Button layoutX="22.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="25.0" prefWidth="82.0" text="Добавить" />
+                         <Button layoutX="114.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="25.0" prefWidth="133.0" text="Удалить выбранный" />
+                         <Button layoutX="257.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickShowAll" prefHeight="25.0" prefWidth="103.0" text="Показать все" />
+                         <Button layoutX="371.0" layoutY="25.0" mnemonicParsing="false" onAction="#onClickFilter" text="Фильтры" />
                      </children>
                   </AnchorPane>
             </content>
@@ -44,7 +42,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="manufacturerView" layoutX="21.0" layoutY="68.0" prefHeight="533.0" prefWidth="1254.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="68.0">
+                         <TableView fx:id="manufacturerView" layoutX="21.0" layoutY="68.0" prefHeight="533.0" prefWidth="1254.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="68.0">
                           <columns>
                             <TableColumn fx:id="idManufColumn" prefWidth="75.0" text="ID" />
                             <TableColumn fx:id="nameManufColumn" prefWidth="227.0" text="Название " />
@@ -59,6 +57,36 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Пользователи">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="userView" layoutX="47.0" layoutY="70.0" prefHeight="463.0" prefWidth="1207.0">
+                           <columns>
+                              <TableColumn fx:id="nameUserColumn" prefWidth="227.0" text="Имя пользователя" />
+                              <TableColumn fx:id="passColumn" prefWidth="206.0" text="Пароль" />
+                              <TableColumn fx:id="isAdminColumn" prefWidth="210.0" text="Права администратора" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <!--<Tab text="Пользователи">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="userView" layoutX="39.0" layoutY="58.0" prefHeight="475.0" prefWidth="1215.0">
+                           <columns>
+                              <TableColumn fx:id="nameUserColumn" prefWidth="227.0" text="Имя пользователя" />
+                              <TableColumn fx:id="passColumn" prefWidth="205.0" text="Пароль" />
+                              <TableColumn fx:id="isAdminColumn" prefWidth="148.0" text="Права администратора" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>-->
         </tabs>
       </TabPane>
    </children>

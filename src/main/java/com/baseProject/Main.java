@@ -21,6 +21,7 @@ public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private MainLayoutController mainLayoutController;
+    private MainUserLayoutController mainUserLayoutController;
 
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
@@ -36,6 +37,7 @@ public class Main extends Application {
             }
         }
         showLoginPassLayout();
+        CarbideDAO.checker();
     }
 
     private void showLoginPassLayout() throws IOException {
@@ -91,9 +93,9 @@ public class Main extends Application {
 
             rootLayout.setCenter(mainPane);
 
-            mainLayoutController = loader.getController();
-            mainLayoutController.setMain(this);
-            mainLayoutController.setUser(true);
+            mainUserLayoutController = loader.getController();
+            mainUserLayoutController.setMain(this);
+            mainUserLayoutController.setUser(true);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8"
-            fx:controller="com.baseProject.FXMLControllers.MainLayoutController">
+            fx:controller="com.baseProject.FXMLControllers.MainUserLayoutController">
     <children>
         <TabPane layoutY="11.0" prefHeight="689.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE"
                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

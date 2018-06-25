@@ -38,7 +38,7 @@ public class CarbideDAO {
         while (rs.next()) {
             user.setName(rs.getString("Name"));
             user.setPass(rs.getString("Pass"));
-            user.setAdmin(rs.getBoolean("isAdmin"));
+            user.setIsAdmin(rs.getBoolean("isAdmin"));
         }
         return user;
     }
@@ -118,7 +118,7 @@ public class CarbideDAO {
                 carbides.add(searchMaterialBase(materialId));
 
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return carbides;
@@ -134,7 +134,7 @@ public class CarbideDAO {
                 String materialId = String.valueOf(resultSet.getInt("ID_Material"));
                 carbides.add(searchMaterialBase(materialId));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
@@ -152,7 +152,7 @@ public class CarbideDAO {
                 String materialId = String.valueOf(resultSet.getInt(1));
                 carbides.add(searchMaterialBase(materialId));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -398,6 +398,32 @@ public class CarbideDAO {
             DBUtil.dbExecuteUpdate(updateParameters);
         } catch (SQLException e) {
             System.out.print("Error occurred while UPDATE Operation: " + e);
+        }
+    }
+
+    public static ObservableList<User> searchAllUsers() throws SQLException {
+        ObservableList<User> users = FXCollections.observableArrayList();
+        String select = "SELECT * from user";
+        ResultSet rs = DBUtil.dbExecuteQuery(select);
+        while (rs.next()) {
+            User user = new User();
+            user.setPass(rs.getString(2));
+            user.setName(rs.getString(1));
+            user.setIsAdmin(rs.getBoolean(3));
+            users.add(user);
+        }
+        return users;
+    }
+
+    public static void checker() {
+        String check = "CHECKSUM TABLE material";
+        try {
+            ResultSet rs = DBUtil.dbExecuteQuery(check);
+            while (rs.next()) {
+                System.out.println(rs.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

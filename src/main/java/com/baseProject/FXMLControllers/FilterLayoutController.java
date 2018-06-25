@@ -89,7 +89,7 @@ public class FilterLayoutController {
             destroyComboBox.setItems(destroys);
             manufacturerComboBox.setItems(manufacturers);
             fractionsComboBox.setItems(fractions);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -107,7 +107,7 @@ public class FilterLayoutController {
         return okClicked;
     }
 
-    public void onClickSearch(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    public void onClickSearch(ActionEvent actionEvent) throws SQLException {
         if(mark != null){
             mark = com.baseProject.DAO.CarbideDAO.getComboParameters("mark", "Mark", mark);
             queries.add("ID_mark = " + mark);

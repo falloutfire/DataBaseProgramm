@@ -30,10 +30,9 @@
        <ComboBox fx:id="classCutComboBox" layoutX="135.0" layoutY="264.0" prefWidth="150.0"/>
        <ComboBox fx:id="classDestroyComboBox" layoutX="135.0" layoutY="293.0" prefWidth="150.0"/>
        <TextField fx:id="priceField" layoutX="426.0" layoutY="235.0" prefHeight="17.0" prefWidth="149.0" text="13"/>
-       <TextField fx:id="valueCutField" editable="false" layoutX="426.0" layoutY="267.0" prefHeight="17.0"
-                  prefWidth="149.0" text="12"/>
-       <TextField fx:id="valueDestroyField" editable="false" layoutX="426.0" layoutY="296.0" prefHeight="17.0"
-                  prefWidth="149.0" text="13"/>
+       <TextField fx:id="valueCutField" layoutX="426.0" layoutY="267.0" prefHeight="17.0" prefWidth="149.0" text="12"/>
+       <TextField fx:id="valueDestroyField" layoutX="426.0" layoutY="296.0" prefHeight="17.0" prefWidth="149.0"
+                  text="13"/>
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickClose" text="Закрыть" />
       <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickUpdate" text="Изменить" />
       <Button layoutX="450.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickDelete" text="Удалить" />

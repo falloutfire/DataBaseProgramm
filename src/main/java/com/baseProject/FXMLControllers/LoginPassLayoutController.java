@@ -21,26 +21,24 @@ public class LoginPassLayoutController {
         User user;
         try {
             user = CarbideDAO.enterIn(login);
-            if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && !user.isAdmin()) {
+            if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && !user.isIsAdmin()) {
                 main.openLayoutUser();
-            } else if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && user.isAdmin()) {
+            } else if (Objects.equals(login, user.getName()) && Objects.equals(pass, user.getPass()) && user.isIsAdmin()) {
                 main.openLayoutAdmin();
             } else {
                 getAlert();
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            if (Objects.equals(login, "man") && (Objects.equals(pass, "man"))) {
+            if (Objects.equals(login, "admin") && (Objects.equals(pass, "admin"))) {
                 main.openLayoutAdmin();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка входа");
-                alert.setHeaderText("Отсутствует подключение к базе данных пользователей");
+                alert.setHeaderText("Отсутствует подключение к базе данных");
                 alert.setContentText("Проверьте подключение или же войдите в аккаунт администратора для восстановления базы данных.\n");
                 alert.showAndWait();
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 

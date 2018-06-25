@@ -3,27 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="955887b9-8023-4295-a50c-59513d645c6c" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/export.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/BaseWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/RootUserLayout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/055bda56-345e-44db-a5be-f9f8d78ec078.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/055bda56-345e-44db-a5be-f9f8d78ec078.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainUserLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/pass.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/AddMaterialLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/AddMaterialLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/FilterLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/FilterLayout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/RootLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/RootLayout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/baseProject/FXMLControllers/pass.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/baseProject/View/AddMaterialLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baseProject/View/AddMaterialLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/baseProject/View/DetailsLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baseProject/View/DetailsLayout.fxml" afterDir="false" />
@@ -70,38 +63,67 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="karbides: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="karbides@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="karbides: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="class_destroy: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="59" column="161" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="161" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DetailsLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4692">
-              <caret line="303" column="78" selection-start-line="303" selection-start-column="78" selection-end-line="303" selection-end-column="78" />
+            <state relative-caret-position="4641">
+              <caret line="298" column="294" selection-start-line="298" selection-start-column="294" selection-end-line="298" selection-end-column="294" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_destroy" pinned="false" current-in-tab="false">
-        <entry file="das://055bda56-345e-44db-a5be-f9f8d78ec078/schema/karbides/table/class_destroy">
+      <file leaf-file-name="CarbideDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7021">
+              <caret line="427" column="9" selection-start-line="427" selection-start-column="9" selection-end-line="427" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainUserLayoutController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainUserLayoutController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1836">
+              <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="62" selection-start-line="61" selection-start-column="10" selection-end-line="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="material" pinned="false" current-in-tab="false">
+        <entry file="das://055bda56-345e-44db-a5be-f9f8d78ec078/schema/karbides/table/material">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -109,72 +131,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Main.java">
+      <file leaf-file-name="Carbide.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Carbide.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
+            <state relative-caret-position="1972">
+              <caret line="196" selection-start-line="196" selection-end-line="196" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPassLayoutController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java">
+      <file leaf-file-name="BaseWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/BaseWrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="119">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailsLayoutUser.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="DetailsLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayout.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file leaf-file-name="MainLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
-              <folding>
-                <element signature="e#9035#9036#0" expanded="true" />
-                <element signature="e#9064#9065#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2550">
+              <caret line="168" column="61" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -184,8 +166,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -226,34 +208,35 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Manufacturer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/AddManufacturerLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/AddManufacturerLayoutController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/FilterLayout.fxml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/RootLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbidDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Carbide.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/AddMaterialLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/055bda56-345e-44db-a5be-f9f8d78ec078/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/BackUpLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/BackUpLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/BackUpLayoutController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java" />
         <option value="$PROJECT_DIR$/target/export.bat" />
         <option value="$PROJECT_DIR$/export.bat" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Util/ScriptRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/BaseWrapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/RoorUserLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/055bda56-345e-44db-a5be-f9f8d78ec078/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainUserLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java" />
       </list>
     </option>
   </component>
@@ -299,7 +282,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -309,6 +292,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -387,13 +372,16 @@
               <item name="baseProject" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BaseComp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BaseComp" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Course" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -569,7 +557,13 @@
       <workItem from="1529434277700" duration="7771000" />
       <workItem from="1529491947602" duration="17662000" />
       <workItem from="1529512033831" duration="649000" />
-      <workItem from="1529526315131" duration="312000" />
+      <workItem from="1529526315131" duration="8115000" />
+      <workItem from="1529575683534" duration="2045000" />
+      <workItem from="1529624163679" duration="2227000" />
+      <workItem from="1529626586262" duration="2825000" />
+      <workItem from="1529658189318" duration="4477000" />
+      <workItem from="1529667337151" duration="595000" />
+      <workItem from="1529844864101" duration="1203000" />
     </task>
     <task id="LOCAL-00001" summary="add dynamic change image material">
       <created>1528917312474</created>
@@ -606,14 +600,22 @@
       <option name="project" value="LOCAL" />
       <updated>1529281287844</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add user">
+      <created>1529527521907</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1529527521907</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208525000" />
+    <option name="totallyTimeSpent" value="229700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -621,14 +623,14 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.13918306" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.13918306" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3267974" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34158415" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33828384" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32838285" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19213313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21028744" />
       <window_info anchor="right" id="Database" order="3" weight="0.20499243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -638,38 +640,38 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32673267" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32673267" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.42244226" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32673267" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32673267" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.20499243" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34158415" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.3267974" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34158415" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.20499243" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.3267974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info id="Capture Tool" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32673267" />
@@ -701,13 +703,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -716,20 +711,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/RootLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="273" selection-start-line="8" selection-start-column="273" selection-end-line="8" selection-end-column="273" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -742,13 +737,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/pass.txt" />
-    <entry file="das://table:/fa58799a/055bda56-345e-44db-a5be-f9f8d78ec078/karbides.mark">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/fa58799a/055bda56-345e-44db-a5be-f9f8d78ec078/karbides.fractions">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -789,12 +777,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/AddManufacturerLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="87" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -804,46 +792,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/LoginPassLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Carbide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="196" column="29" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/AddMaterialLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/055bda56-345e-44db-a5be-f9f8d78ec078/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -854,28 +814,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Util/ScriptRunner.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/BackUpLayout.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/BackUpLayoutController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="136" column="46" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/FilterLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/RootLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="74" lean-forward="true" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Manufacturer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -883,28 +836,6 @@
           <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/BaseWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fa58799a/055bda56-345e-44db-a5be-f9f8d78ec078/karbides.material">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://055bda56-345e-44db-a5be-f9f8d78ec078/schema/karbides/table/type_of_use">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -921,62 +852,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/RootUserLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="72" column="11" selection-start-line="67" selection-start-column="8" selection-end-line="72" selection-end-column="11" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="527">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/DetailsLayoutUser.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+        <state relative-caret-position="68">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -987,28 +882,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/AddManufacturerLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="476">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/FilterLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/MainLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="79" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/View/UserMainLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/LoginPassLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/055bda56-345e-44db-a5be-f9f8d78ec078/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fa58799a/055bda56-345e-44db-a5be-f9f8d78ec078/karbides.mark">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/BaseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding>
-            <element signature="e#9035#9036#0" expanded="true" />
-            <element signature="e#9064#9065#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fa58799a/055bda56-345e-44db-a5be-f9f8d78ec078/karbides.material">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/DetailsLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4692">
-          <caret line="303" column="78" selection-start-line="303" selection-start-column="78" selection-end-line="303" selection-end-column="78" />
+        <state relative-caret-position="4641">
+          <caret line="298" column="294" selection-start-line="298" selection-start-column="294" selection-end-line="298" selection-end-column="294" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="168" column="61" selection-start-line="168" selection-start-column="61" selection-end-line="168" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Entities/Carbide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/MainUserLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/FXMLControllers/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="62" selection-start-line="61" selection-start-column="10" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/DAO/CarbideDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7021">
+          <caret line="427" column="9" selection-start-line="427" selection-start-column="9" selection-end-line="427" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Util/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baseProject/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="59" column="161" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="161" />
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
         </state>
       </provider>
     </entry>
